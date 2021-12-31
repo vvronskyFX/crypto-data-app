@@ -1,6 +1,6 @@
 import React from 'react';
 import millify from 'millify';
-import { Collapse, Row, Col, Typography, Avatar } from 'antd';
+import { Collapse, Row, Col, Typography, Avatar, Table, Space } from 'antd';
 import HTMLReactParser from 'html-react-parser';
 
 import { useGetExchangesQuery } from '../services/cryptoApi';
@@ -15,6 +15,8 @@ const Exchanges = () => {
 
   if (isFetching) return <Loader />;
 
+
+
   return (
     <>
       <Row>
@@ -25,21 +27,21 @@ const Exchanges = () => {
       </Row>
       <Row>
         {exchangesList.map((exchange) => (
-          <Col span={24}>
+          <Col  span={24}>
             <Collapse>
               <Panel
                 key={exchange.id}
                 showArrow={false}
                 header={(
                   <Row key={exchange.id}>
-                    <Col span={6}>
+                    <Col style={{ width: "18.9vw" }}>
                       <Text><strong>{exchange.rank}.</strong></Text>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
                       <Text><strong>{exchange.name}</strong></Text>
                     </Col>
-                    <Col span={6}>${millify(exchange.volume)}</Col>
-                    <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
-                    <Col span={6}>{millify(exchange.marketShare)}%</Col>
+                    <Col style={{ width: "18.9vw" }}>${millify(exchange.volume)}</Col>
+                    <Col style={{ width: "18.9vw" }}>{millify(exchange.numberOfMarkets)}</Col>
+                    <Col style={{ width: "18.9vw" }}>{millify(exchange.marketShare)}%</Col>
                   </Row>
                   )}
               >
