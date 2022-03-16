@@ -21,3 +21,5 @@ export const cryptoNewsApi = createApi({
 export const {
 	useGetCryptoNewsQuery,
 } = cryptoNewsApi;
+
+//Need to fix UI rendering News Info 
